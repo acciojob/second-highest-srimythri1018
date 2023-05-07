@@ -9,18 +9,26 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-		let array=[];	
-		for(let i=0;i<arr.length;i++){
-				if(arr[i]!= arr[i+1])
-					array.push(arr[i]);
-			}
-			array.sort();
-			if(array.length >1){
-			return array[array.length-2];
-		}
-			else
-				return '-Infinity';
-		}
+		 if (arr.length < 2) {
+    return Infinity;
+  }
+
+  // Sort the array in descending order
+  arr.sort(function(a, b) {
+    return b - a;
+  });
+
+  // Find the second highest element
+  let second = arr[1];
+  for (let i = 2; i < arr.length; i++) {
+    if (arr[i] !== second) {
+      return second;
+    }
+  }
+
+  // If all elements are the same, return Infinity
+  return Infinity;
+}
 
 		function Main() {
 			//var n = prompt("Enter the number of elements");
