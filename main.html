@@ -9,8 +9,8 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-		 if (arr.length < 2) {
-    return -Infinity;
+		 if (arr.length===0 || arr.length===1) {
+    return '-Infinity';
   }
 
   // Sort the array in descending order
@@ -31,12 +31,12 @@
 }
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			//var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
 			}
-			alert(secondHighest(arr));
+			//alert(secondHighest(arr));
 		}
 		Main();
 	</script>
